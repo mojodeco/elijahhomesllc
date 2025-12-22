@@ -9,21 +9,23 @@
       margin: 20px;
       line-height: 1.6;
     }
+    /* Global img style for most images */
     img {
-      max-width: 100%;
       height: auto;
       display: block;
       margin-bottom: 20px;
     }
+    /* Heading with image */
     .heading-with-image {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
     }
     .heading-with-image img {
-      width: 80px; /* smaller, proportional to heading */
-      height: auto;
+      width: 60px;        /* smaller width */
+      max-width: none;    /* override global img max-width */
       margin-right: 15px;
+      display: inline-block;
     }
     h1, h2 {
       color: #333;
