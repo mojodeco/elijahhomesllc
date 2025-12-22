@@ -15,13 +15,19 @@
       display: block;
       margin-bottom: 20px;
     }
-    .main-image {
-      width: 30%; /* Smaller than full width, proportional to heading */
-      margin: 0 auto 20px auto; /* Center horizontally */
+    .heading-with-image {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .heading-with-image img {
+      width: 80px; /* smaller, proportional to heading */
+      height: auto;
+      margin-right: 15px;
     }
     h1, h2 {
       color: #333;
-      text-align: left; /* Align all headings to the left */
+      margin: 0;
     }
     ul {
       list-style: none;
@@ -44,11 +50,11 @@
 </head>
 <body>
 
-  <!-- Photo of a quaint home (smaller, centered) -->
-  <img src="images/quaint-home.jpg" alt="Quaint Home" class="main-image">
-
-  <!-- Main heading -->
-  <h1>Fast Real Estate Offers in Georgia</h1>
+  <!-- Main heading with image -->
+  <div class="heading-with-image">
+    <img src="images/quaint-home.jpg" alt="Quaint Home">
+    <h1>Fast Real Estate Offers in Georgia</h1>
+  </div>
 
   <!-- 3 WAYS WE HELP YOU -->
   <h2>3 WAYS WE HELP YOU</h2>
