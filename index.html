@@ -23,14 +23,17 @@
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-parchment);
+            /* Parchment texture restored below */
+            background-image: url('images/natural-paper.png');
+            background-repeat: repeat;
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* --- Navigation Removed --- */
+        /* --- Simplified Header --- */
         header {
             padding: 20px 5%;
-            background: rgba(242, 227, 213, 0.95);
+            background: rgba(242, 227, 213, 0.85);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -41,7 +44,7 @@
         .hero {
             height: 80vh;
             background: linear-gradient(var(--overlay), var(--overlay)), 
-                        url('images/village-life.png'); /* Updated background */
+                        url('images/village-life.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -57,6 +60,7 @@
             font-size: 4.5rem;
             line-height: 1.1;
             margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
         }
 
         .hero p {
@@ -64,6 +68,7 @@
             font-style: italic;
             margin-bottom: 30px;
             opacity: 0.9;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
         }
 
         .btn-hero {
@@ -74,6 +79,7 @@
             text-decoration: none;
             font-weight: bold;
             width: fit-content;
+            transition: background 0.3s;
         }
 
         /* --- Torn Edge Divider --- */
@@ -81,13 +87,14 @@
             height: 60px;
             width: 100%;
             background-color: var(--bg-parchment);
+            background-image: url('images/natural-paper.png');
             margin-top: -30px;
             position: relative;
             z-index: 2;
             clip-path: polygon(0% 15%, 4% 35%, 9% 10%, 15% 40%, 22% 15%, 28% 45%, 35% 15%, 42% 40%, 50% 10%, 58% 40%, 65% 15%, 72% 45%, 80% 15%, 88% 35%, 95% 10%, 100% 25%, 100% 100%, 0% 100%);
         }
 
-        section { padding: 80px 10%; }
+        section { padding: 80px 10%; position: relative; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; }
 
         /* --- About Section --- */
@@ -127,24 +134,30 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
+        .service-card h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            margin-bottom: 10px; 
+            text-align: center;
+        }
 
         /* --- Contact Section --- */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 60px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.3);
             padding: 40px;
             border-radius: 15px;
+            backdrop-filter: blur(5px);
         }
 
         .contact-form { display: flex; flex-direction: column; gap: 15px; }
 
         .contact-form input {
             padding: 15px;
-            border: none;
-            background: #fdf6ee;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: rgba(253, 246, 238, 0.8);
             border-radius: 4px;
             font-size: 1rem;
         }
@@ -157,11 +170,13 @@
             border-radius: 4px;
             font-weight: bold;
             cursor: pointer;
+            font-size: 1.1rem;
         }
 
         @media (max-width: 900px) {
             .about-grid, .services-grid, .contact-container { grid-template-columns: 1fr; }
             .hero h1 { font-size: 3rem; }
+            .hero { text-align: center; align-items: center; }
         }
     </style>
 </head>
@@ -171,7 +186,61 @@
         </header>
 
     <div class="hero">
-        <h1>Elijah Homes LLC</h1> <p>Building Communities, Fast Cash Offers in Georgia</p> <a href="#" class="btn-hero">Explore Our Homes</a>
+        <h1>Elijah Homes LLC</h1>
+        <p>Building Communities, Fast Cash Offers in Georgia</p>
+        <a href="#contact" class="btn-hero">Explore Our Homes</a>
     </div>
 
-    <div class="torn-divider">
+    <div class="torn-divider"></div>
+
+    <section class="about-section">
+        <div class="about-grid">
+            <div>
+                <h2>About Us</h2>
+                <p>Elijah Homes LLC is dedicated to building communities. Our mission is to remove obstacles during life transitions by offering real estate solutions that help clients sell, move, and rebuild financial strength with confidence and peace of mind.</p>
+            </div>
+            <img src="images/quaint-home.jpg" class="about-img" alt="Quaint Home">
+        </div>
+    </section>
+
+    <section class="help-section">
+        <h2 class="help-title">We help you</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/cash-offer.png" alt="Cash Offer">
+                <h3>Sell Your Property</h3>
+            </div>
+            <div class="service-card">
+                <img src="images/move-belongings.jpg" alt="Move Belongings">
+                <h3>Move Belongings</h3>
+            </div>
+            <div class="service-card">
+                <img src="images/credit-score.png" alt="Credit Score">
+                <h3>Increase Credit Score</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div>
+                <h2>Contact Us</h2>
+                <p>Reach out to learn more about our homes and communities.</p>
+                <div style="margin-top: 30px;">
+                    <p><strong>Elijah Homes LLC</strong></p>
+                    <p>256 Northlake Parkway, Ste 110, PMB1028</p>
+                    <p>Tucker, GA 30084</p>
+                    <p>(404)946-3253</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Your Phone" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
