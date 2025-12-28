@@ -23,21 +23,38 @@
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-parchment);
-            /* Parchment texture restored below */
             background-image: url('images/natural-paper.png');
             background-repeat: repeat;
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* --- Simplified Header --- */
+        /* --- Header with Logo Restored --- */
         header {
-            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
             background: rgba(242, 227, 213, 0.85);
             position: sticky;
             top: 0;
             z-index: 1000;
-            min-height: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .logo-container img {
+            height: 45px; /* Size for your kite logo */
+            width: auto;
         }
 
         /* --- Hero Section --- */
@@ -79,7 +96,6 @@
             text-decoration: none;
             font-weight: bold;
             width: fit-content;
-            transition: background 0.3s;
         }
 
         /* --- Torn Edge Divider --- */
@@ -183,11 +199,15 @@
 <body>
 
     <header>
-        </header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Elijah Homes Logo"> Elijah Homes LLC
+        </div>
+    </header>
 
     <div class="hero">
         <h1>Elijah Homes LLC</h1>
         <p>Building Communities, Fast Cash Offers in Georgia</p>
+        <a href="#contact" class="btn-hero">Explore Our Homes</a>
     </div>
 
     <div class="torn-divider"></div>
@@ -210,11 +230,11 @@
                 <h3>Sell Your Property</h3>
             </div>
             <div class="service-card">
-                <img src="images/move-belongings.png" alt="Move Belongings">
+                <img src="images/move-belongings.jpg" alt="Move Belongings">
                 <h3>Move Belongings</h3>
             </div>
             <div class="service-card">
-                <img src="images/credit-score.png" alt="Credit Score">
+                <img src="images/credit-score.jpg" alt="Credit Score">
                 <h3>Increase Credit Score</h3>
             </div>
         </div>
@@ -224,12 +244,11 @@
         <div class="contact-container">
             <div>
                 <h2>Contact Us</h2>
-                <p>Reach out to get a cash offer on your home.</p>
+                <p>Reach out to learn more about our homes and communities.</p>
                 <div style="margin-top: 30px;">
                     <p><strong>Elijah Homes LLC</strong></p>
                     <p>256 Northlake Parkway, Ste 110, PMB1028</p>
                     <p>Tucker, GA 30084</p>
-                    <p>(404) 946-3253</p>
                 </div>
             </div>
             <form class="contact-form">
