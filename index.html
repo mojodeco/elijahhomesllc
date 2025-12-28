@@ -5,177 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elijah Homes LLC</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-orange: #c05c2b;
-            --bg-parchment: #f2e3d5;
-            --text-dark: #3e2723;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Helper for the seamless paper texture */
-        .paper-texture {
-            background-color: var(--bg-parchment) !important;
-            background-image: url('images/natural-paper-#c05c2b.png') !important;
-            background-repeat: repeat !important;
-            background-size: 400px auto !important; /* Fixed size helps alignment */
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Apply texture to body */
-        body.paper-texture {
-            background-attachment: fixed;
-        }
-
-        /* --- Header --- */
-        header {
-            display: flex;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(242, 227, 213, 0.7);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-            font-size: 1.4rem;
-        }
-
-        .logo-container img { height: 50px; width: auto; }
-
-        /* --- Hero --- */
-        .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
-                        url('images/village-life.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-            color: white;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-style: italic;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-        }
-
-        /* --- THE FIXED TORN EDGE --- */
-        .torn-divider {
-            height: 100px;
-            width: 100%;
-            margin-top: -60px; /* Pulls it up over the hero */
-            position: relative;
-            z-index: 10;
-            /* Ensures the texture matches the body exactly */
-            clip-path: polygon(0% 40%, 3% 55%, 7% 38%, 12% 62%, 18% 40%, 24% 68%, 30% 35%, 38% 65%, 45% 42%, 52% 70%, 58% 38%, 65% 65%, 72% 40%, 78% 62%, 85% 35%, 92% 58%, 96% 38%, 100% 50%, 100% 100%, 0% 100%);
-        }
-
-        section { padding: 60px 10%; }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .help-title {
-            font-family: 'Great Vibes', cursive;
-            color: var(--primary-orange);
-            font-size: 4rem;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-card { text-align: center; }
-        .service-card img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            background: rgba(255,255,255,0.3);
-            padding: 50px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-form { display: flex; flex-direction: column; gap: 15px; }
-        .contact-form input {
-            padding: 18px;
-            border: 1px solid rgba(0,0,0,0.1);
-            background: rgba(255,255,255,0.7);
-            border-radius: 8px;
-        }
-
-        .btn-submit {
-            background: var(--primary-orange);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 900px) {
-            .about-grid, .services-grid, .contact-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="paper-texture">
 
     <header>
         <div class="logo-container">
-            <img src="images/logo2.png" alt="Elijah Homes Logo">
+            <img src="images/logo.png" alt="Elijah Homes Logo">
             Elijah Homes LLC
         </div>
     </header>
@@ -190,28 +26,28 @@
     <section>
         <div class="about-grid">
             <div>
-                <h2 style="font-family: 'Great Vibes', cursive; color: var(--primary-orange); font-size: 4rem; text-align: left; margin-bottom: 20px;">About Us</h2>
+                <h2 class="script-title">About Us</h2>
                 <p>Elijah Homes LLC is dedicated to building communities. Our mission is to remove obstacles during life transitions by offering real estate solutions that help clients sell, move, and rebuild financial strength with confidence and peace of mind.</p>
             </div>
             <img src="images/bridge.png" class="about-img" alt="Landscape Painting">
         </div>
     </section>
 
-    <section style="padding: 80px 10%;">
-        <h2 class="help-title" style="text-align: left; margin-bottom: 40px;">We help you</h2>
+    <section class="help-section">
+        <h2 class="script-title">We help you</h2>
         
         <div class="services-grid">
-            <div class="service-card" style="text-align: left;">
+            <div class="service-card">
                 <img src="images/cash-offer.png" alt="Cash Offer">
                 <h3>Sell Your Property</h3>
             </div>
             
-            <div class="service-card" style="text-align: left;">
+            <div class="service-card">
                 <img src="images/move-belongings.png" alt="Moving">
                 <h3>Move Belongings</h3>
             </div>
             
-            <div class="service-card" style="text-align: left;">
+            <div class="service-card">
                 <img src="images/credit-score.png" alt="Credit">
                 <h3>Increase Credit Score</h3>
             </div>
@@ -225,9 +61,9 @@
                 <p>256 Northlake Parkway, Ste 110, PMB1028<br>Tucker, GA 30084</p>
             </div>
             <form class="contact-form">
-                <input type="text" placeholder="Your Name">
-                <input type="tel" placeholder="Your Phone">
-                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Your Phone" required>
+                <input type="email" placeholder="Your Email" required>
                 <button type="submit" class="btn-submit">Send Message</button>
             </form>
         </div>
