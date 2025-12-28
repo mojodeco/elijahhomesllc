@@ -13,7 +13,7 @@
 /* Texture alignment logic */
 .paper-texture {
     background-color: var(--bg-parchment) !important;
-    background-image: url('images/natural-paper-orange.png') !important;
+    background-image: url('images/natural-paper2.png') !important;
     background-repeat: repeat !important;
     background-size: 400px auto !important;
 }
