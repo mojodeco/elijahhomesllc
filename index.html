@@ -1,223 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elijah Homes LLC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-orange: #c05c2b;
-            --bg-parchment: #f2e3d5;
-            --text-dark: #3e2723;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* The texture is applied here */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--bg-parchment) !important;
-            background-image: url('images/natural-paper2.png') !important;
-            background-repeat: repeat !important;
-            background-attachment: fixed;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* --- Header --- */
-        header {
-            display: flex;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(242, 227, 213, 0.7);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-            font-size: 1.4rem;
-        }
-
-        .logo-container img {
-            height: 50px;
-            width: auto;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('images/village-life.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-            color: white;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-style: italic;
-        }
-
-        /* --- Torn Edge --- */
-        .torn-divider {
-            height: 60px;
-            width: 100%;
-            background-image: url('images/natural-paper.png') !important;
-            background-color: var(--bg-parchment);
-            margin-top: -30px;
-            position: relative;
-            z-index: 2;
-            clip-path: polygon(0% 15%, 5% 35%, 10% 10%, 15% 40%, 20% 15%, 25% 45%, 30% 15%, 35% 40%, 40% 10%, 45% 40%, 50% 15%, 55% 45%, 60% 15%, 65% 40%, 70% 15%, 75% 45%, 80% 15%, 85% 35%, 90% 10%, 95% 35%, 100% 15%, 100% 100%, 0% 100%);
-        }
-
-        /* --- Content Sections --- */
-        section { padding: 80px 10%; }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .help-title {
-            font-family: 'Great Vibes', cursive;
-            color: var(--primary-orange);
-            font-size: 3.5rem;
-            margin-bottom: 40px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-card { text-align: center; }
-        .service-card img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        /* --- Contact --- */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            background: rgba(255,255,255,0.2);
-            padding: 40px;
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-        }
-
-        .contact-form { display: flex; flex-direction: column; gap: 15px; }
-        .contact-form input {
-            padding: 15px;
-            border: 1px solid rgba(0,0,0,0.1);
-            background: rgba(255,255,255,0.5);
-            border-radius: 4px;
-        }
-
-        .btn-submit {
-            background: var(--primary-orange);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elijah Homes LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Elegant serif + readable sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- Top Nav -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Elijah Homes LLC">
+        <!-- Optional logo image (kite) -->
+        <img class="brand-mark" src="images/kite-logo.png" alt="Elijah Homes LLC logo" />
+        <span class="brand-name">Elijah Homes LLC</span>
+      </a>
 
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Elijah Homes Logo">
-            Elijah Homes LLC
-        </div>
-    </header>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#help">Our Homes</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <div class="hero">
-        <h1>Elijah Homes LLC</h1>
-        <p>Building Communities, Fast Cash Offers in Georgia</p>
+      <a class="btn btn-primary btn-small" href="#contact">Explore Homes</a>
     </div>
+  </header>
 
-    <div class="torn-divider"></div>
+  <main id="top">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-bg" role="img" aria-label="Storybook village background"></div>
 
-    <section>
-        <div class="about-grid">
-            <div>
-                <h2>About Us</h2>
-                <p>Elijah Homes LLC is dedicated to building communities. Our mission is to remove obstacles during life transitions by offering real estate solutions that help clients sell, move, and rebuild financial strength with confidence and peace of mind.</p>
-            </div>
-            <img src="images/quaint-home.jpg" class="about-img" alt="About Us">
+      <div class="container hero-inner">
+        <div class="hero-card">
+          <h1>Welcome to<br><span>Elijah Homes LLC</span></h1>
+          <p class="hero-subtitle">Crafting Dreams, Building Communities</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#help">Explore Our Homes</a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section>
-        <h2 class="help-title">We help you</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="images/cash-offer.png" alt="Sell Property">
-                <h3>Sell Your Property</h3>
-            </div>
-            <div class="service-card">
-                <img src="images/move-belongings.jpg" alt="Move">
-                <h3>Move Belongings</h3>
-            </div>
-            <div class="service-card">
-                <img src="images/credit-score.jpg" alt="Credit">
-                <h3>Increase Credit Score</h3>
-            </div>
-        </div>
-    </section>
+    <!-- Page body paper -->
+    <section class="paper">
+      <!-- About -->
+      <section id="about" class="section container">
+        <div class="two-col">
+          <div>
+            <h2>About Us</h2>
+            <p class="lead">
+              Elijah Homes LLC is dedicated to building communities. Our mission is to remove obstacles
+              during life transitions by offering real estate solutions that help clients sell, move,
+              and rebuild financial strength with confidence and peace of mind.
+            </p>
+          </div>
 
-    <section>
-        <div class="contact-container">
-            <div>
-                <h2>Contact Us</h2>
-                <p>256 Northlake Parkway, Ste 110, PMB1028<br>Tucker, GA 30084</p>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name">
-                <input type="tel" placeholder="Your Phone">
-                <input type="email" placeholder="Your Email">
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
+          <div class="about-image">
+            <!-- Use a wide crop of your village image -->
+            <img src="images/about-village.jpg" alt="Warm village scene" />
+          </div>
         </div>
-    </section>
+      </section>
 
+      <!-- We help you -->
+      <section id="help" class="section container">
+        <h2 class="script-title">We help you</h2>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-media">
+              <img src="images/sell-property-castle.jpg" alt="Castle for sale sign" />
+            </div>
+            <h3>Sell Your Property</h3>
+            <p>Simple, supportive options to help you sell with clarity and ease.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="images/move-boxes.jpg" alt="People moving boxes" />
+            </div>
+            <h3>Move Belongings</h3>
+            <p>Guidance and coordination so your move feels organized and calm.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="images/increase-credit.jpg" alt="Couple reading letter happily in a cozy home" />
+            </div>
+            <h3>Increase Credit Score</h3>
+            <p>Practical steps to rebuild financial strength and move forward confidently.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section container">
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2>Contact Us</h2>
+            <p class="muted">Reach out to learn more about our homes and communities.</p>
+
+            <address class="address">
+              <strong>Elijah Homes LLC</strong><br>
+              256 Northlake Parkway, Ste 110, PMB1028<br>
+              Tucker, GA 30084
+            </address>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your Name" required>
+            </label>
+
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="Your Phone" required>
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="Your Email" required>
+            </label>
+
+            <label class="full">
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <small>© <span id="year"></span> Elijah Homes LLC. All rights reserved.</small>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
