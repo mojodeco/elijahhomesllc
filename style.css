@@ -1,21 +1,28 @@
 :root {
+    /* Warmer parchment to pull from the sunset sky tones */
     --primary-orange: #c05c2b;
-    --bg-parchment: #f2e3d5;
+    --bg-parchment: #f7e9d7; 
     --text-dark: #3e2723;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Updated Torn Edge: Rounded and Organic */
+.torn-divider {
+    height: 100px;
+    width: 100%;
+    margin-top: -80px; /* Pulls up over the hero */
+    position: relative;
+    z-index: 10;
+    /* A smoother, rounded wave effect instead of sharp points */
+    clip-path: ellipse(100% 70% at 50% 80%);
 }
 
-/* Texture alignment logic */
+/* Adjust the texture tiling to look more natural */
 .paper-texture {
     background-color: var(--bg-parchment) !important;
     background-image: url('images/natural-paper-orange.png') !important;
     background-repeat: repeat !important;
-    background-size: 800px auto !important; /* Doubled size to reduce tiling lines */
+    background-size: 1000px auto !important; /* Larger size makes tiling less obvious */
+    background-blend-mode: multiply; /* Helps the texture blend into the new warm color */
 }
 
 body {
