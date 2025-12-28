@@ -41,10 +41,9 @@ header {
 }
 
 .logo-container {
-    height: 60px; /* Slightly larger for detail */
+     mix-blend-mode: multiply; /* This makes white backgrounds transparent */
+    height: 50px;
     width: auto;
-    mix-blend-mode: multiply; /* Removes any remaining light fringe/white edges */
-    display: block;
 }
 
 /* --- Hero --- */
