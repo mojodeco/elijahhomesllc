@@ -1,86 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Elijah Homes LLC | Fast Real Estate Offers in Georgia</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.6;
-    }
-    /* Global img style for most images */
-    img {
-      height: auto;
-      display: block;
-      margin-bottom: 20px;
-    }
-    /* Heading with image */
-    .heading-with-image {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .heading-with-image img {
-      width: 260px;        /* smaller width */
-      max-width: none;    /* override global img max-width */
-      margin-right: 15px;
-      display: inline-block;
-    }
-    h1, h2 {
-      color: #333;
-      margin: 0;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-    }
-    li img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-    }
-    .contact {
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elijah Homes LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #c05c2b;
+            --primary-hover: #a34a1d;
+            --bg-parchment: #f2e3d5;
+            --text-dark: #3e2723;
+            --overlay: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-parchment);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(242, 227, 213, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-container img { height: 40px; }
+
+        nav { display: flex; align-items: center; gap: 25px; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        nav a.active { color: var(--primary-orange); }
+
+        .btn-nav {
+            background: var(--primary-orange);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            /* Points to your hero-landscape.jpg */
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('images/hero-landscape.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            color: white;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-hero {
+            background: var(--primary-orange);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        /* --- Torn Edge Divider --- */
+        .torn-divider {
+            height: 60px;
+            width: 100%;
+            background-color: var(--bg-parchment);
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+            clip-path: polygon(0% 15%, 4% 35%, 9% 10%, 15% 40%, 22% 15%, 28% 45%, 35% 15%, 42% 40%, 50% 10%, 58% 40%, 65% 15%, 72% 45%, 80% 15%, 88% 35%, 95% 10%, 100% 25%, 100% 100%, 0% 100%);
+        }
+
+        section { padding: 80px 10%; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; }
+
+        /* --- About Section --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* --- Help Section --- */
+        .help-title {
+            font-family: 'Great Vibes', cursive;
+            color: var(--primary-orange);
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
+        .service-card p { color: #665; font-size: 0.95rem; }
+
+        /* --- Contact Section --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            background: rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+
+        .contact-form input {
+            padding: 15px;
+            border: none;
+            background: #fdf6ee;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid, .services-grid, .contact-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+            nav { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Main heading with image -->
-  <div class="heading-with-image">
-    <img src="images/quaint-home.jpg" alt="Quaint Home">
-    <h1>Fast Real Estate Offers in Georgia</h1>
-  </div>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Elijah Homes Logo">
+            Elijah Homes LLC
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#" class="active">Our Homes</a>
+            <a href="#">Contact</a>
+            <a href="#" class="btn-nav">Explore Homes</a>
+        </nav>
+    </header>
 
-  <!-- 3 WAYS WE HELP YOU -->
-  <h2>3 WAYS WE HELP YOU</h2>
-  <ul>
-    <li>
-      <img src="images/cash-icon.png" alt="Hand with cash">
-      SELL YOUR CURRENT PROPERTY
-    </li>
-    <li>
-      <img src="images/moving-van.jpg" alt="Moving van">
-      MOVE YOUR BELONGINGS
-    </li>
-    <li>
-      <img src="images/fico-icon.png" alt="FICO icon">
-      IMPROVE YOUR CREDIT SCORE
-    </li>
-  </ul>
+    <div class="hero">
+        <h1>Welcome to<br>Elijah Homes LLC</h1>
+        <p>Crafting Dreams, Building Communities</p>
+        <a href="#" class="btn-hero">Explore Our Homes</a>
+    </div>
 
-  <!-- Contact section -->
-  <div class="contact">
-    <h2>GET IN TOUCH</h2>
-    <p>Phone: (404) 946-3253</p>
-    <p>Email: <a href="mailto:info@elijahhomesllc.com">info@elijahhomesllc.com</a></p>
-  </div>
+    <div class="torn-divider"></div>
+
+    <section class="about-section">
+        <div class="about-grid">
+            <div>
+                <h2>About Us</h2>
+                <p>Elijah Homes LLC is dedicated to building communities. Our mission is to remove obstacles during life transitions by offering real estate solutions that help clients sell, move, and rebuild financial strength with confidence and peace of mind.</p>
+            </div>
+            <img src="images/quaint-home.jpg" class="about-img" alt="Cozy Cottage">
+        </div>
+    </section>
+
+    <section class="help-section">
+        <h2 class="help-title">We help you</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/sell-property.jpg" alt="Sell Your Property">
+                <h3>Sell Your Property</h3>
+                <p>A cozy and enchanting home in a vibrant garden setting.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/move-belongings.jpg" alt="Move Belongings">
+                <h3>Move Belongings</h3>
+                <p>A cozy and enchanting home in a vibrant garden setting.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/credit-score.jpg" alt="Increase Credit Score">
+                <h3>Increase Credit Score</h3>
+                <p>A cozy and enchanting home in a vibrant garden setting.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div>
+                <h2>Contact Us</h2>
+                <p>Reach out to learn more about our homes and communities.</p>
+                <div style="margin-top: 30px;">
+                    <p><strong>Elijah Homes LLC</strong></p>
+                    <p>256 Northlake Parkway, Ste 110, PMB1028</p>
+                    <p>Tucker, GA 30084</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="tel" placeholder="Your Phone">
+                <input type="email" placeholder="Your Email">
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
 </body>
 </html>
