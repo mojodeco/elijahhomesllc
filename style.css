@@ -41,12 +41,9 @@ header {
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    font-size: 1.4rem;
+    mix-blend-mode: multiply; /* This makes white backgrounds transparent */
+    height: 50px;
+    width: auto;
 }
 
 .logo-container img { height: 50px; width: auto; }
