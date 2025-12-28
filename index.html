@@ -23,25 +23,58 @@
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-parchment);
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* --- Navigation Removed --- */
+        /* --- Navigation --- */
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px 5%;
             background: rgba(242, 227, 213, 0.95);
             position: sticky;
             top: 0;
             z-index: 1000;
-            min-height: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-container img { height: 40px; }
+
+        nav { display: flex; align-items: center; gap: 25px; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        nav a.active { color: var(--primary-orange); }
+
+        .btn-nav {
+            background: var(--primary-orange);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
         }
 
         /* --- Hero Section --- */
         .hero {
             height: 80vh;
             background: linear-gradient(var(--overlay), var(--overlay)), 
-                        url('images/village-life.png'); /* Updated background */
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -74,6 +107,7 @@
             text-decoration: none;
             font-weight: bold;
             width: fit-content;
+            transition: background 0.3s;
         }
 
         /* --- Torn Edge Divider --- */
@@ -87,6 +121,7 @@
             clip-path: polygon(0% 15%, 4% 35%, 9% 10%, 15% 40%, 22% 15%, 28% 45%, 35% 15%, 42% 40%, 50% 10%, 58% 40%, 65% 15%, 72% 45%, 80% 15%, 88% 35%, 95% 10%, 100% 25%, 100% 100%, 0% 100%);
         }
 
+        /* --- Sections General --- */
         section { padding: 80px 10%; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; }
 
@@ -128,6 +163,7 @@
         }
 
         .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
+        .service-card p { color: #665; font-size: 0.95rem; }
 
         /* --- Contact Section --- */
         .contact-container {
@@ -147,6 +183,7 @@
             background: #fdf6ee;
             border-radius: 4px;
             font-size: 1rem;
+            color: var(--text-dark);
         }
 
         .btn-submit {
@@ -157,21 +194,37 @@
             border-radius: 4px;
             font-weight: bold;
             cursor: pointer;
+            font-size: 1rem;
         }
 
+        /* --- Responsive --- */
         @media (max-width: 900px) {
             .about-grid, .services-grid, .contact-container { grid-template-columns: 1fr; }
             .hero h1 { font-size: 3rem; }
+            nav { display: none; } /* Simplified for mobile */
         }
     </style>
 </head>
 <body>
 
     <header>
-        </header>
+        <div class="logo-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/619/619153.png" alt="Elijah Homes Logo">
+            Elijah Homes LLC
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#" class="active">Our Homes</a>
+            <a href="#">Contact</a>
+            <a href="#" class="btn-nav">Explore Homes</a>
+        </nav>
+    </header>
 
     <div class="hero">
-        <h1>Elijah Homes LLC</h1> <p>Building Communities, Fast Cash Offers in Georgia</p> <a href="#" class="btn-hero">Explore Our Homes</a>
+        <h1>Welcome to<br>Elijah Homes LLC</h1>
+        <p>Crafting Dreams, Building Communities</p>
+        <a href="#" class="btn-hero">Explore Our Homes</a>
     </div>
 
     <div class="torn-divider"></div>
@@ -182,7 +235,7 @@
                 <h2>About Us</h2>
                 <p>Elijah Homes LLC is dedicated to building communities. Our mission is to remove obstacles during life transitions by offering real estate solutions that help clients sell, move, and rebuild financial strength with confidence and peace of mind.</p>
             </div>
-            <img src="images/quaint-home.jpg" class="about-img" alt="Cozy Cottage">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" class="about-img" alt="Cozy Cottage">
         </div>
     </section>
 
@@ -190,15 +243,19 @@
         <h2 class="help-title">We help you</h2>
         <div class="services-grid">
             <div class="service-card">
-                <img src="images/cash-offer.png" alt="Sell Your Property"> <h3>Sell Your Property</h3>
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600" alt="Castle Sign Painting">
+                <h3>Sell Your Property</h3>
+                <p>A cozy and enchanting home in a vibrant garden setting.</p>
             </div>
             <div class="service-card">
-                <img src="images/move-belongings.jpg" alt="Move Belongings">
+                <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600" alt="Moving House">
                 <h3>Move Belongings</h3>
+                <p>A cozy and enchanting home in a vibrant garden setting.</p>
             </div>
             <div class="service-card">
-                <img src="images/credit-score.jpg" alt="Increase Credit Score">
+                <img src="https://images.unsplash.com/photo-1554224155-16974a4ea205?auto=format&fit=crop&q=80&w=600" alt="Financial Paperwork">
                 <h3>Increase Credit Score</h3>
+                <p>A cozy and enchanting home in a vibrant garden setting.</p>
             </div>
         </div>
     </section>
