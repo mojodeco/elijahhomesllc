@@ -13,9 +13,9 @@
 /* Texture alignment logic */
 .paper-texture {
     background-color: var(--bg-parchment) !important;
-    background-image: url('images/natural-paper2.png') !important;
+    background-image: url('images/natural-paper-orange.png') !important;
     background-repeat: repeat !important;
-    background-size: 400px auto !important;
+    background-size: 800px auto !important; /* Doubled size to reduce tiling lines */
 }
 
 body {
@@ -45,6 +45,7 @@ header {
     height: 50px;
     width: auto;
 }
+.logo-container img { height: 50px; width: auto; }
 
 /* --- Hero --- */
 .hero {
