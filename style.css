@@ -15,7 +15,7 @@
    Grouping these ensures the divider and body use the exact same color and image */
 .paper-texture, 
 .torn-divider {
-    background-color: var(--bg-parchment) !important;
+    background-color: rgba(247, 233, 215, 0.9) !important;
     background-image: url('images/parchment.png') !important; 
     background-repeat: repeat !important;
     background-size: 1500px auto !important; 
