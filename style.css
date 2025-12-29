@@ -1,35 +1,23 @@
 :root {
-    /* Warmer parchment to pull from the sunset sky tones */
+    /* Warmer parchment color matched to sunset sky */
     --primary-orange: #c05c2b;
     --bg-parchment: #f7e9d7; 
     --text-dark: #3e2723;
 }
 
-/* Updated Rounded Tear Edge */
-.torn-divider {
-    height: 120px; /* Increased height for a smoother curve */
-    width: 100%;
-    margin-top: -100px; /* Pulls it up further over the hero image */
-    position: relative;
-    z-index: 10;
-    
-    /* This soft curve replaces the jagged points */
-    clip-path: ellipse(100% 70% at 50% 90%);
-    
-    /* IMPORTANT: These must match the body texture exactly */
-    background-color: var(--bg-parchment);
-    background-image: url('images/natural-paper-orange.png');
-    background-size: 1000px auto;
-    background-blend-mode: multiply;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Adjust the texture tiling to look more natural */
-.paper-texture {
+/* 1. THE SHARED TEXTURE (Syncs the background and the edge) */
+.paper-texture, .torn-divider {
     background-color: var(--bg-parchment) !important;
-    background-image: url('images/parchment.png') !important;
+    background-image: url('images/parchment.png') !important; /* Make sure this filename is correct */
     background-repeat: repeat !important;
-    background-size: 1000px auto !important; /* Larger size makes tiling less obvious */
-    background-blend-mode: multiply; /* Helps the texture blend into the new warm color */
+    background-size: 1000px auto !important; 
+    background-blend-mode: multiply;
 }
 
 body {
@@ -41,6 +29,18 @@ body {
 body.paper-texture {
     background-attachment: fixed;
 }
+
+/* 2. THE ROUNDED TEAR EDGE (Consolidated) */
+.torn-divider {
+    height: 120px;
+    width: 100%;
+    margin-top: -100px; /* Pulls it up over the hero image */
+    position: relative;
+    z-index: 10;
+    /* Soft rounded landscape curve */
+    clip-path: ellipse(100% 70% at 50% 90%);
+}
+
 /* --- Header --- */
 header {
     display: flex;
@@ -54,11 +54,19 @@ header {
 }
 
 .logo-container {
-     mix-blend-mode: multiply; /* This makes white backgrounds transparent */
-    height: 50px;
-    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.4rem;
 }
-.logo-container img { height: 50px; width: auto; }
+
+.logo-container img { 
+    height: 50px; 
+    width: auto; 
+    mix-blend-mode: multiply; /* Keeps logo transparent on warm bg */
+}
 
 /* --- Hero --- */
 .hero {
@@ -84,16 +92,6 @@ header {
     font-size: 1.5rem;
     font-style: italic;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
-
-/* --- Torn Edge --- */
-.torn-divider {
-    height: 100px;
-    width: 100%;
-    margin-top: -60px;
-    position: relative;
-    z-index: 10;
-    clip-path: polygon(0% 40%, 3% 55%, 7% 38%, 12% 62%, 18% 40%, 24% 68%, 30% 35%, 38% 65%, 45% 42%, 52% 70%, 58% 38%, 65% 65%, 72% 40%, 78% 62%, 85% 35%, 92% 58%, 96% 38%, 100% 50%, 100% 100%, 0% 100%);
 }
 
 /* --- Typography Helpers --- */
