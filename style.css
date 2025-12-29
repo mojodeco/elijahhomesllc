@@ -113,7 +113,7 @@ header {
 }
 
 /* --- Layout Sections --- */
-section { padding: 0px 5%; }
+section { padding: 0px 20%; }
 
 .about-grid {
     display: grid;
