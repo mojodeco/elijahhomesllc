@@ -17,7 +17,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Elijah Homes <onboarding@resend.dev>',
-        to: ['your-email@gmail.com'], // <--- PUT YOUR REAL EMAIL HERE
+        to: ['ymoguls.halos.2i@icloud.com'], // <--- PUT YOUR REAL EMAIL HERE
         subject: `New Lead: ${name}`,
         html: `
           <p><strong>Name:</strong> ${name}</p>
