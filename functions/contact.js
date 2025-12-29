@@ -32,8 +32,7 @@ export async function onRequestPost(context) {
       // Redirect to a "Thank You" page or back to home
       return Response.redirect(new URL('/?success=true', context.request.url), 303);
     } else {
-      return new Response("Email failed to send", { status: 500 });
-    }
+      return new Response(API Key exists: ${!!env.RESEND_API_KEY}, { status: 500 });
   } catch (err) {
     return new Response(err.message, { status: 500 });
   }
