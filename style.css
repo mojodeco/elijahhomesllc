@@ -19,7 +19,7 @@
 /* Adjust the texture tiling to look more natural */
 .paper-texture {
     background-color: var(--bg-parchment) !important;
-    background-image: url('images/natural-paper-orange.png') !important;
+    background-image: url('images/parchment.png') !important;
     background-repeat: repeat !important;
     background-size: 1000px auto !important; /* Larger size makes tiling less obvious */
     background-blend-mode: multiply; /* Helps the texture blend into the new warm color */
