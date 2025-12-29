@@ -118,7 +118,7 @@ section { padding: 60px 10%; }
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center;
+    align-items: start;
 }
 
 .about-img {
