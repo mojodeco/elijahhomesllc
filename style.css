@@ -14,12 +14,32 @@
 /* 1. SYNCED TEXTURE 
    Grouping these ensures the divider and body use the exact same color and image */
 .paper-texture, 
+/* 2. THE TORN EDGE */
 .torn-divider {
+    height: 150px; /* Adjust height based on your PNG size */
+    width: 100%;
+    margin-top: -120px; /* Pulls the divider up to overlap the hero image */
+    position: relative;
+    z-index: 10;
+
+    /* Multiple Backgrounds: 
+       Top layer: Your torn PNG (anchored to the top)
+       Bottom layer: The parchment texture 
+    */
+    background-image: 
+        url('images/torn-edge.png'), 
+        url('images/parchment.png') !important;
+    
+    background-position: top center, center center !important;
+    background-repeat: repeat-x, repeat !important;
+    background-size: 100% auto, 1000px auto !important;
+    
+    /* Ensure the background color still applies */
     background-color: var(--bg-parchment) !important;
-    background-image: url('images/parchment.png') !important; 
-    background-repeat: repeat !important;
-    background-size: 1000px auto !important; 
-    background-blend-mode: multiply;
+    background-blend-mode: normal, multiply;
+    
+    /* Remove the old clip-path that was hiding the edges */
+    clip-path: none !important;
 }
 
 body {
