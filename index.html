@@ -61,12 +61,10 @@
                 <p>256 Northlake Parkway, Ste 110, PMB1028<br>Tucker, GA 30084<br>(404) 946-3253</p>
             </div>
             <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="tel" placeholder="Your Phone" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <div class="cf-turnstile" data-sitekey="your-site-key-here"></div>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 <button type="submit" class="btn-submit">Send Message</button>
             </form>
         </div>
