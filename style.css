@@ -16,29 +16,30 @@
 .paper-texture, 
 /* 2. THE TORN EDGE */
 .torn-divider {
-    height: 150px; /* Adjust height based on your PNG size */
+    height: 120px; /* Adjust height based on your PNG's dimensions */
     width: 100%;
-    margin-top: -120px; /* Pulls the divider up to overlap the hero image */
+    margin-top: -100px; /* Pulls the paper section up to overlap the hero image */
     position: relative;
     z-index: 10;
 
-    /* Multiple Backgrounds: 
-       Top layer: Your torn PNG (anchored to the top)
-       Bottom layer: The parchment texture 
+    /* Layering: 
+       1. The torn PNG edge (Top Layer)
+       2. The parchment texture (Middle Layer)
+       3. The background color (Bottom Layer) 
     */
     background-image: 
         url('images/torn-edge.png'), 
         url('images/parchment.png') !important;
     
+    /* Anchors the torn edge to the top, tiles the parchment everywhere else */
     background-position: top center, center center !important;
     background-repeat: repeat-x, repeat !important;
     background-size: 100% auto, 1000px auto !important;
     
-    /* Ensure the background color still applies */
     background-color: var(--bg-parchment) !important;
     background-blend-mode: normal, multiply;
-    
-    /* Remove the old clip-path that was hiding the edges */
+
+    /* Removed clip-path to show the actual image edge */
     clip-path: none !important;
 }
 
@@ -105,15 +106,18 @@ header {
     color: white;
 }
 
+/* Hero Refinements */
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    font-size: 5.5rem; /* Larger scale for the 'Welcome' feel */
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
 }
 
 .hero p {
-    font-size: 1.5rem;
-    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: 300;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
