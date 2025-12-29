@@ -205,3 +205,9 @@ section { padding: 0px 10%; }
     .hero h1 { font-size: 3rem; }
     .script-title { font-size: 3rem; text-align: center; }
 }
+/* --- Hero Text Override --- */
+.hero h1, 
+.hero p {
+    color: #ffffff !important; /* Forces text back to white */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow to make it pop against the image */
+}
