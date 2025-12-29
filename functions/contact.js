@@ -1,21 +1,40 @@
 export async function onRequestPost(context) {
+  const { env } = context;
+  
   try {
     const input = await context.request.formData();
-    
-    // Extract form fields
     const name = input.get('name');
     const phone = input.get('phone');
     const email = input.get('email');
     const message = input.get('message');
 
-    // Here you would typically add your Email API call (Resend, Postmark, etc.)
-    // For now, let's just log it or return a success response
-    
-    return new Response(JSON.stringify({ success: true, message: "Message sent!" }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" }
+    // Sending the data to Resend API
+    const resp = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Elijah Homes <onboarding@resend.dev>',
+        to: ['your-email@gmail.com'], // <--- PUT YOUR REAL EMAIL HERE
+        subject: `New Lead: ${name}`,
+        html: `
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong> ${message}</p>
+        `,
+      }),
     });
+
+    if (resp.ok) {
+      // Redirect to a "Thank You" page or back to home
+      return Response.redirect(new URL('/?success=true', context.request.url), 303);
+    } else {
+      return new Response("Email failed to send", { status: 500 });
+    }
   } catch (err) {
-    return new Response("Error processing form", { status: 500 });
+    return new Response(err.message, { status: 500 });
   }
 }
