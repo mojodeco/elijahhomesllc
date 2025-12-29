@@ -17,7 +17,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Elijah Homes <onboarding@resend.dev>',
-        to: ['moguls.halos.2i@icloud.com'], // <--- PUT YOUR REAL EMAIL HERE
+        to: ['moguls.halos.2i@icloud.com'], 
         subject: `New Lead: ${name}`,
         html: `
           <p><strong>Name:</strong> ${name}</p>
@@ -29,11 +29,13 @@ export async function onRequestPost(context) {
     });
 
     if (resp.ok) {
-      // Redirect to a "Thank You" page or back to home
+      // Redirect back to your home page with a success message in the URL
       return Response.redirect(new URL('/?success=true', context.request.url), 303);
     } else {
-      return new Response("Email failed to send", { status: 500 });
+      const errorText = await resp.text();
+      return new Response(`Resend Error: ${errorText}`, { status: 500 });
+    }
   } catch (err) {
-    return new Response(err.message, { status: 500 });
+    return new Response(`Server Error: ${err.message}`, { status: 500 });
   }
 }
