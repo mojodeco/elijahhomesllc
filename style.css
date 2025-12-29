@@ -14,33 +14,12 @@
 /* 1. SYNCED TEXTURE 
    Grouping these ensures the divider and body use the exact same color and image */
 .paper-texture, 
-/* 2. THE TORN EDGE */
 .torn-divider {
-    height: 120px; /* Adjust height based on your PNG's dimensions */
-    width: 100%;
-    margin-top: -100px; /* Pulls the paper section up to overlap the hero image */
-    position: relative;
-    z-index: 10;
-
-    /* Layering: 
-       1. The torn PNG edge (Top Layer)
-       2. The parchment texture (Middle Layer)
-       3. The background color (Bottom Layer) 
-    */
-    background-image: 
-        url('images/torn-edge.png'), 
-        url('images/parchment.png') !important;
-    
-    /* Anchors the torn edge to the top, tiles the parchment everywhere else */
-    background-position: top center, center center !important;
-    background-repeat: repeat-x, repeat !important;
-    background-size: 100% auto, 1000px auto !important;
-    
     background-color: var(--bg-parchment) !important;
-    background-blend-mode: normal, multiply;
-
-    /* Removed clip-path to show the actual image edge */
-    clip-path: none !important;
+    background-image: url('images/parchment.png') !important; 
+    background-repeat: repeat !important;
+    background-size: 1000px auto !important; 
+    background-blend-mode: multiply;
 }
 
 body {
@@ -68,20 +47,22 @@ body.paper-texture {
 /* --- Header --- */
 header {
     display: flex;
-    justify-content: space-between; /* Pushes logo and nav apart */
     align-items: center;
-    padding: 15px 5%;
-    background: transparent; /* Makes it float over the hero image */
-    position: absolute; /* Place it over the background */
-    width: 100%;
+    padding: 20px 5%;
+    background: rgba(242, 227, 213, 0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
 .logo-container {
-    color: #5d3a25;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .logo-container img { 
@@ -104,18 +85,15 @@ header {
     color: white;
 }
 
-/* Hero Refinements */
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 5.5rem; /* Larger scale for the 'Welcome' feel */
-    line-height: 1.1;
-    margin-bottom: 10px;
-    text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+    font-size: 4.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero p {
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-style: italic;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
