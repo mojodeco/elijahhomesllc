@@ -14,12 +14,21 @@
 /* 1. SYNCED TEXTURE 
    Grouping these ensures the divider and body use the exact same color and image */
 .paper-texture, 
+/* 2. THE WAVE EDGE (Hand-Torn Effect) */
 .torn-divider {
-    background-color: var(--bg-parchment) !important;
-    background-image: url('images/parchment.png') !important; 
-    background-repeat: repeat !important;
-    background-size: 1000px auto !important; 
-    background-blend-mode: multiply;
+    height: 120px;
+    width: 100%;
+    margin-top: -100px; /* Pulls it up over the hero image */
+    position: relative;
+    z-index: 10;
+    
+    /* This complex path creates a jagged, organic "torn paper" wave */
+    clip-path: polygon(
+        0% 50%, 5% 45%, 10% 55%, 15% 40%, 20% 60%, 25% 35%, 
+        30% 50%, 35% 45%, 40% 65%, 45% 40%, 50% 55%, 55% 35%, 
+        60% 60%, 65% 45%, 70% 50%, 75% 35%, 80% 65%, 85% 45%, 
+        90% 55%, 95% 40%, 100% 50%, 100% 100%, 0% 100%
+    );
 }
 
 body {
