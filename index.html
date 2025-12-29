@@ -55,24 +55,42 @@
     </section>
 
     <section>
-        <div class="contact-container">
-            <div>
-                <h2>Contact Us</h2>
-                <p>256 Northlake Parkway, Ste 110, PMB1028<br>Tucker, GA 30084<br>(404) 946-3253</p>
-            </div>
-           <form class="contact-form" action="/contact" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="tel" name="phone" placeholder="Your Phone" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn-submit">Send Message</button>
-                <div id="success-message" style="display:none; color: green; text-align: center; margin-top: 20px;">
-                <h3>Thank You!</h3>
-                <p>We have received your message and will get back to you shortly.</p>
-            </div>
-            </form>
+    <div class="contact-container">
+        <div>
+            <h2>Contact Us</h2>
+            <p>256 Northlake Parkway, Ste 110, PMB1028<br>Tucker, GA 30084<br>(404) 946-3253</p>
         </div>
-    </section>
 
+        <form id="contact-form" class="contact-form" action="/contact" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Your Phone" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+
+        <div id="success-message" style="display:none; text-align: center; margin-top: 20px; padding: 20px; border: 1px solid #c05c2b; border-radius: 8px;">
+            <h3 style="color: #c05c2b;">Thank You!</h3>
+            <p>We have received your message and will get back to you shortly.</p>
+        </div>
+
+        <script>
+            // Check if the URL contains "?success=true"
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                // Show success message
+                const msg = document.getElementById('success-message');
+                if (msg) msg.style.display = 'block';
+
+                // Hide the form using the ID
+                const form = document.getElementById('contact-form');
+                if (form) form.style.display = 'none';
+
+                // Clean up the URL in the browser bar
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        </script>
+        </div>
+</section>
 </body>
 </html>
