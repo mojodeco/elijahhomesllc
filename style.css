@@ -32,16 +32,21 @@ body.paper-texture {
     background-attachment: fixed;
 }
 
-/* 2. THE WAVE EDGE (Consolidated) 
-   I removed the second duplicate entry that was breaking this. */
+/* handles the torn shape */
 .torn-divider {
     height: 120px;
     width: 100%;
-    margin-top: -100px; /* Pulls it up over the hero image */
+    margin-top: -100px; 
     position: relative;
     z-index: 10;
-    /* Soft rounded landscape curve */
-    clip-path: ellipse(100% 70% at 50% 90%);
+
+    /* 2. Add the mask using your new PNG */
+    -webkit-mask-image: url('images/torn-edge.png');
+    mask-image: url('images/torn-edge.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 /* --- Header --- */
