@@ -58,7 +58,7 @@ body.paper-texture {
 header {
     display: flex;
     align-items: center;
-    padding: 3px 5%;
+    padding: 0px 5%;
     background: rgba(242, 227, 213, 0.7);
     backdrop-filter: blur(10px);
     position: sticky;
@@ -118,7 +118,7 @@ header {
 }
 
 /* --- Layout Sections --- */
-section { padding: 0px 10%; }
+section { padding: 3px 10%; } /* --- Spacing between Layout Sections first number, center marings--- */
 
 .about-grid {
     display: grid;
