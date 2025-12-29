@@ -19,7 +19,6 @@
     background-image: url('images/parchment.png') !important; 
     background-repeat: repeat !important;
     background-size: 1000px auto !important; 
-    background-blend-mode: multiply;
 }
 
 body {
