@@ -64,7 +64,7 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     font-size: 1.4rem;
