@@ -58,7 +58,7 @@ body.paper-texture {
 header {
     display: flex;
     align-items: center;
-    padding: 0px 5%;
+    padding: 3px 5%;
     background: rgba(242, 227, 213, 0.7);
     backdrop-filter: blur(10px);
     position: sticky;
