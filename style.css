@@ -1,5 +1,4 @@
 :root {
-    /* Warmer parchment matched to sunset sky */
     --primary-orange: #c05c2b;
     --bg-parchment: #f7e9d7; 
     --text-dark: #3e2723;
@@ -11,11 +10,10 @@
     box-sizing: border-box;
 }
 
-/* 1. SYNCED TEXTURE 
-   Grouping these ensures the divider and body use the exact same color and image */
+/* 1. SYNCED TEXTURE */
 .paper-texture, 
 .torn-divider {
-    background-color: rgba(247, 233, 215, 0.9) !important;
+    background-color: var(--bg-parchment) !important; /* Use the variable here too! */
     background-image: url('images/parchment.png') !important; 
     background-repeat: repeat !important;
     background-size: 1500px auto !important; 
@@ -25,8 +23,15 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
+    background-color: var(--bg-parchment); /* Fallback for Brave */
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Force visibility for all core text elements */
+p, h1, h2, h3, li {
+    opacity: 1 !important;
+    color: var(--text-dark) !important;
+}
 body.paper-texture {
     background-attachment: fixed;
 }
