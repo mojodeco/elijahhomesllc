@@ -165,12 +165,22 @@ section { padding: 20px 10%; }
 
 .contact-form { display: flex; flex-direction: column; gap: 15px; }
 
-.contact-form input {
+.contact-form input 
+.contact-form textarea {
     padding: 18px;
     border: 1px solid rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.7);
     border-radius: 8px;
     font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    resize: vertical; 
+    min-height: 120px;
+}
+/* 2. Styles ONLY for the message box */
+.contact-form textarea {
+    resize: vertical; 
+    min-height: 120px;
 }
 
 .btn-submit {
