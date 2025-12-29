@@ -121,6 +121,7 @@ header {
 section { padding: 3px 10%; } /* --- Spacing between Layout Sections first number, center marings--- */
 
 .about-grid {
+    font-size: 1.25rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
