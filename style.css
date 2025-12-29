@@ -1,5 +1,5 @@
 :root {
-    /* Warmer parchment color matched to sunset sky */
+    /* Warmer parchment matched to sunset sky */
     --primary-orange: #c05c2b;
     --bg-parchment: #f7e9d7; 
     --text-dark: #3e2723;
@@ -11,10 +11,12 @@
     box-sizing: border-box;
 }
 
-/* 1. THE SHARED TEXTURE (Syncs the background and the edge) */
-.paper-texture, .torn-divider {
+/* 1. SYNCED TEXTURE 
+   Grouping these ensures the divider and body use the exact same color and image */
+.paper-texture, 
+.torn-divider {
     background-color: var(--bg-parchment) !important;
-    background-image: url('images/parchment.png') !important; /* Make sure this filename is correct */
+    background-image: url('images/parchment.png') !important; 
     background-repeat: repeat !important;
     background-size: 1000px auto !important; 
     background-blend-mode: multiply;
@@ -30,7 +32,8 @@ body.paper-texture {
     background-attachment: fixed;
 }
 
-/* 2. THE ROUNDED TEAR EDGE (Consolidated) */
+/* 2. THE WAVE EDGE (Consolidated) 
+   I removed the second duplicate entry that was breaking this. */
 .torn-divider {
     height: 120px;
     width: 100%;
@@ -63,9 +66,9 @@ header {
 }
 
 .logo-container img { 
-    height: 50px; 
+    height: 60px; 
     width: auto; 
-    mix-blend-mode: multiply; /* Keeps logo transparent on warm bg */
+    mix-blend-mode: multiply; 
 }
 
 /* --- Hero --- */
