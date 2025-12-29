@@ -68,22 +68,20 @@ body.paper-texture {
 /* --- Header --- */
 header {
     display: flex;
+    justify-content: space-between; /* Pushes logo and nav apart */
     align-items: center;
-    padding: 20px 5%;
-    background: rgba(242, 227, 213, 0.7);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
+    padding: 15px 5%;
+    background: transparent; /* Makes it float over the hero image */
+    position: absolute; /* Place it over the background */
+    width: 100%;
     z-index: 1000;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    font-size: 1.4rem;
+    color: #5d3a25;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .logo-container img { 
