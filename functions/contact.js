@@ -8,7 +8,7 @@ export async function onRequestPost(context) {
     const email = input.get('email');
     const message = input.get('message');
 
-    // 1. Send the data to Resend
+    // Sending the data to Resend API
     const resp = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -17,7 +17,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Elijah Homes <onboarding@resend.dev>',
-        to: ['moguls.halos.2i@icloud.com'], 
+        to: ['moguls.halos.2i@icloud.com'], // <--- PUT YOUR REAL EMAIL HERE
         subject: `New Lead: ${name}`,
         html: `
           <p><strong>Name:</strong> ${name}</p>
@@ -28,14 +28,13 @@ export async function onRequestPost(context) {
       }),
     });
 
-    // 2. Handle the response
     if (resp.ok) {
+      // Redirect to a "Thank You" page or back to home
       return Response.redirect(new URL('/?success=true', context.request.url), 303);
     } else {
-      const errorData = await resp.text();
-      return new Response(`Resend Error: ${errorData}`, { status: 500 });
+      return new Response("Email failed to send", { status: 500 });
     }
   } catch (err) {
-    return new Response(`Server Error: ${err.message}`, { status: 500 });
+    return new Response(err.message, { status: 500 });
   }
 }
