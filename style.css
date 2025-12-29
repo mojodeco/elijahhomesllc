@@ -37,7 +37,7 @@ body.paper-texture {
     width: 100%;
     margin-top: -25px; 
     position: relative;
-    z-index: 10;
+    z-index: 90;
 /* 0.0 is invisible, 1.0 is solid. Try 0.8 or 0.9 */
     opacity: 0.85;
     /* 2. Add the mask using your new PNG */
