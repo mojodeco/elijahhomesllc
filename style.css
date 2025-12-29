@@ -35,10 +35,11 @@ body.paper-texture {
 .torn-divider {
     height: 120px;
     width: 100%;
-    margin-top: -20px; 
+    margin-top: -25px; 
     position: relative;
     z-index: 10;
-
+/* 0.0 is invisible, 1.0 is solid. Try 0.8 or 0.9 */
+    opacity: 0.85;
     /* 2. Add the mask using your new PNG */
     -webkit-mask-image: url('images/torn-edge.png');
     mask-image: url('images/torn-edge.png');
