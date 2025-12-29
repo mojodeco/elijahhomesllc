@@ -5,15 +5,22 @@
     --text-dark: #3e2723;
 }
 
-/* Updated Torn Edge: Rounded and Organic */
+/* Updated Rounded Tear Edge */
 .torn-divider {
-    height: 100px;
+    height: 120px; /* Increased height for a smoother curve */
     width: 100%;
-    margin-top: -80px; /* Pulls up over the hero */
+    margin-top: -100px; /* Pulls it up further over the hero image */
     position: relative;
     z-index: 10;
-    /* A smoother, rounded wave effect instead of sharp points */
-    clip-path: ellipse(100% 70% at 50% 80%);
+    
+    /* This soft curve replaces the jagged points */
+    clip-path: ellipse(100% 70% at 50% 90%);
+    
+    /* IMPORTANT: These must match the body texture exactly */
+    background-color: var(--bg-parchment);
+    background-image: url('images/natural-paper-orange.png');
+    background-size: 1000px auto;
+    background-blend-mode: multiply;
 }
 
 /* Adjust the texture tiling to look more natural */
@@ -33,23 +40,6 @@ body {
 
 body.paper-texture {
     background-attachment: fixed;
-}
-/* Updated Rounded Tear Edge */
-.torn-divider {
-    height: 120px; /* Increased height for a smoother curve */
-    width: 100%;
-    margin-top: -100px; /* Pulls it up further over the hero image */
-    position: relative;
-    z-index: 10;
-    
-    /* This soft curve replaces the jagged points */
-    clip-path: ellipse(100% 70% at 50% 90%);
-    
-    /* IMPORTANT: These must match the body texture exactly */
-    background-color: var(--bg-parchment);
-    background-image: url('images/natural-paper-orange.png');
-    background-size: 1000px auto;
-    background-blend-mode: multiply;
 }
 /* --- Header --- */
 header {
