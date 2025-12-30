@@ -151,7 +151,10 @@ section { padding: 3px 10%; } /* --- Spacing between Layout Sections first numbe
     margin-bottom: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-
+/* Fix for people's heads being cut off */
+.service-card img[alt="Moving"] {
+    object-position: center 15%; /* Moves the focus to the top 15% of the image */
+}
 .service-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
